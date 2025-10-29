@@ -155,6 +155,18 @@ function resetCar(){
 }
 
 loop();
+  // Make canvas fullscreen automatically
+function goFullscreen() {
+    if (canvas.requestFullscreen) {
+        canvas.requestFullscreen();
+    } else if (canvas.webkitRequestFullscreen) { // Safari
+        canvas.webkitRequestFullscreen();
+    } else if (canvas.msRequestFullscreen) { // IE11
+        canvas.msRequestFullscreen();
+    }
+}
+window.addEventListener('load', goFullscreen);
+
 </script>
 </body>
 </html>
